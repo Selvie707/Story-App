@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.activity.addStory.AddStoryActivity">
+
+    <ImageView
+        android:id="@+id/iv_picture"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:src="@drawable/ic_add_photo"
+        android:contentDescription="@string/conDesStoryPictureDisplay"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/btn_camera"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        app:tint="@color/light_blue_600"
+        android:src="@drawable/ic_camera"
+        android:contentDescription="@string/conDesStoryCameraButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/btn_gallery"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/ic_photo"
+        android:layout_marginStart="8dp"
+        app:tint="@color/light_blue_600"
+        android:contentDescription="@string/conDesStoryGalleryButton"
+        app:layout_constraintStart_toEndOf="@id/btn_camera"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <EditText
+        android:id="@+id/et_add_description"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        android:gravity="top"
+        android:inputType="text"
+        android:hint="@string/add_description"
+        android:layout_marginVertical="62dp"
+        android:background="@drawable/bg_edit_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_picture"
+        app:layout_constraintBottom_toTopOf="@id/btn_upload_story"
+        android:autofillHints="@string/autoFillHints" />
+
+    <CheckBox
+        android:id="@+id/cb_add_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_camera"
+        app:layout_constraintTop_toBottomOf="@id/et_add_description"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addLocation"
+        app:layout_constraintBottom_toTopOf="@id/btn_camera"
+        app:layout_constraintStart_toEndOf="@id/cb_add_location"
+        app:layout_constraintTop_toBottomOf="@id/et_add_description"/>
+
+    <Button
+        android:id="@+id/btn_upload_story"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:text="@string/upload"
+        android:layout_marginStart="8dp"
+        app:layout_constraintWidth_max="320dp"
+        android:backgroundTint="@color/light_blue_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_gallery"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/pb_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
